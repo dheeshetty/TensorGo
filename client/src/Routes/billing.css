@@ -1,0 +1,23 @@
+
+.billing-info-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #575555;
+    border-radius: 5px;
+    background-color: rgb(206, 203, 203);
+  }
+  
+  .billing-info-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .billing-info-details-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .billing-info-detail {
+    margin-bottom: 8px;
+  }
+  

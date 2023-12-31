@@ -1,0 +1,19 @@
+
+.invoice-generation-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.generate-invoice-button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.generate-invoice-button:hover {
+  background-color: #45a049; 
+}
