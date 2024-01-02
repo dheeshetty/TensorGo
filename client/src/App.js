@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/protected', { withCredentials: true });
+        const response = await axios.get(`http://localhost:3000/protected`, { withCredentials: true });
         console.log('User Data:', response.data);
         setUserData(response.data);
       } catch (error) {

@@ -2,12 +2,14 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('./models/user'); 
 const axios = require('axios');
+const dotenv = require("dotenv");
 const Billing = require('./models/billing')
 const { updateBillingData } = require('./Routes/billing'); 
+dotenv.config();
 
 passport.use(new GoogleStrategy({
-  clientID: "114509970763-3u471brfa9u0p9dv38v5n5j9pe3dldiv.apps.googleusercontent.com",
-  clientSecret: "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",
+  clientID: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
   callbackURL: "http://localhost:3000/auth/google/callback",
   scope: ['email', 'profile'],
   passReqToCallback: true,
@@ -39,7 +41,7 @@ passport.use(new GoogleStrategy({
   const billingInfo = await Billing.findOne({ userId }).exec();
 
   if (billingInfo) {
-    const zapierUrl = "https://hooks.zapier.com/hooks/catch/17463079/3wok5lj/";
+    const zapierUrl = process.env.ZAPIER_URL;
     const billingData = {
       userId: user.id,
       displayName: user.displayName,
